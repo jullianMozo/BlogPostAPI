@@ -21,7 +21,7 @@ app.use(errorHandler);
 const corsOptions = {
     //client/Frontend application URL
     // Allow requests from this origin (The client's URL) the origin is in array form if there are multiple origins.
-    origin: ['http://localhost:3000', 'https://blog-post-client-sand.vercel.app/'],
+    origin: ['http://localhost:3000', 'https://blog-post-client-sand.vercel.app'],
     // Allow only specified headers // optional only if you want to restrict the headers
     //allowedHeaders: ['Content-Type', 'Authorization'], 
     credentials: true,
