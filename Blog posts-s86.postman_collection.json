@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "134e2fc8-da3c-46d7-af4c-a46a45d617d5",
+		"name": "Blog posts-s86",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32517837"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"email\": \"admin@mail.com\", \r\n            \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"userName\": \"user1\" ,\r\n            \"email\": \"user1@mail.com\", \r\n            \"password\": \"user1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve user details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2YwOWJkM2M1NjQ3NDg3ZTllMzcwOCIsImVtYWlsIjoidXNlckBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MjQ4NDQ1Mjl9.0-24m1nYRXjjoqSUWo-C-c_NTGUx_YepcQKeo5UY3yk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2YxMjUxMDljMzZkZjk1ZjBlYTNhMiIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzI0ODQ3MTI3fQ.Tk_T-5CH3VV3Km3PoOGQkui-u_XF2qSxOqfZivWg9_I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Understanding OAuth 2.0: Secure Authentication for APIs\",\r\n    \"content\": \"OAuth 2.0 is essential for securing API access. Explore authorization flows, access tokens, and integrating OAuth in your apps\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/blogs/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add comment to post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2YxMjUxMDljMzZkZjk1ZjBlYTNhMiIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzI0ODQ3MTI3fQ.Tk_T-5CH3VV3Km3PoOGQkui-u_XF2qSxOqfZivWg9_I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"goog to know\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/blogs/66cf120509c36df95f0ea39c/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs",
+						"66cf120509c36df95f0ea39c",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2YwOWJkM2M1NjQ3NDg3ZTllMzcwOCIsImVtYWlsIjoidXNlckBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MjQ4NDgwNzh9.2vQOHZAbccqoi_mMSZwsQ99psCt94An0wHmRYt_Ce-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \"title\": \"edited Handling Errors in Express.js: A Comprehensive Guide\",\r\n       \"content\": \"edited Learn how to gracefully handle errors in your Express.js application\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/blogs/66cf122409c36df95f0ea39e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs",
+						"66cf122409c36df95f0ea39e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2YwOThjM2M1NjQ3NDg3ZTllMzcwNiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjQ4NDkwNjV9.L6IYxH4WWZ68DCWh9GxfX6Ve19VEdWfMXJBs4hbhiQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/blogs/66cf14c409c36df95f0ea3b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs",
+						"66cf14c409c36df95f0ea3b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete comment post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2YwOThjM2M1NjQ3NDg3ZTllMzcwNiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjQ4NDkwNjV9.L6IYxH4WWZ68DCWh9GxfX6Ve19VEdWfMXJBs4hbhiQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/blogs/66cf120509c36df95f0ea39c/comments/66cf161b0328ba2676895a86",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs",
+						"66cf120509c36df95f0ea39c",
+						"comments",
+						"66cf161b0328ba2676895a86"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/blogs/66cf120509c36df95f0ea39c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"blogs",
+						"66cf120509c36df95f0ea39c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
